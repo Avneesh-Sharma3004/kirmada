@@ -13,7 +13,7 @@ import {
 } from "react-native";
 
 
- function Login() {
+ function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const Login = () => {
@@ -55,7 +55,7 @@ import {
     </View>
   );
 }
-export default Login;
+export default LoginPage;
 
 const Styles = StyleSheet.create({
   sign: {
