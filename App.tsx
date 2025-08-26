@@ -1,14 +1,20 @@
-import React from "react";  
-import { View,Text } from "react-native";
-import Drawer from "./Projects/ApiIntigrationAndDrawerNAvigation";
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './ecommerce/screens/Homescreens';
+import ProductDetailsScreen from './ecommerce/screens/productDetailScreen';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>My App</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 export default App;
-
