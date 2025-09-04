@@ -24,6 +24,19 @@ const HomeScreen = ({ navigation }) => {
     );
     setFilteredProducts(filtered);
   }, [searchQuery]);
+  const handleSearch = (text) => {
+    setSearchQuery(text);
+  
+
+  if(text.length>=3){
+    const result = allProducts.filter((item)=>
+      item.title.toLowerCase().includes(text.toLowerCase())
+    )
+    setFilteredProducts(result);
+  }else{
+    setFilteredProducts([]);
+  }
+  };
 
   // Header component for FlatList (includes banner scroll + search input)
   const renderBannerHeader = () => (
